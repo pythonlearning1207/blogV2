@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
         const filesWithoutExtension = files.map(file => file.replace('.ejs', ''));
         console.log(filesWithoutExtension);
         res.render('index', { files: filesWithoutExtension });
+        console.log(filesWithoutExtension[0]);
     });
 });
 app.get("/about", (req, res)=> {
