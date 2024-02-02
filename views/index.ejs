@@ -1,0 +1,79 @@
+<%- include("partials/header.ejs") %>
+
+<!-- <%  if (locals.message) {%>
+    <script>alert("<%= message%>");</script>
+<% } %> -->
+<div class="headline box">
+    <div class="inside-content">
+        <h2 class="headline-h2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+    <p>
+        Donec vestibulum massa diam, quis dapibus magna condimentum quis. Phasellus rhoncus lacus vitae libero blandit faucibus. Donec vitae lectus quis nisl luctus sagittis non ut justo. Aenean efficitur ut turpis sit amet elementum. Quisque suscipit tempor tincidunt. Proin nec luctus nisi, ultricies volutpat metus. Quisque turpis diam, congue quis augue quis, tristique imperdiet orci. Sed quis dolor dolor. Etiam volutpat tempus nunc non luctus. Nulla in purus sodales, pretium libero et, eleifend leo. Quisque vel sapien dapibus ex maximus fermentum. Donec sed commodo nulla. Curabitur quis tellus non arcu facilisis viverra. Aliquam placerat ultricies blandit. Aliquam tristique ultricies lacus, vitae egestas magna gravida a. Vivamus lacinia libero at leo mollis pretium ac semper enim. Nunc metus nisl, lobortis at ultricies nec, dignissim sit amet tortor. Fusce et lectus ligula. Cras volutpat, nisl eu pretium viverra, tortor lacus finibus erat, vel porttitor magna purus in sapien.
+    </p>
+    <a href="/fullArticle">Continue Reading</a>
+    </div>
+    
+</div>
+
+<div class="row2-left box">
+    <div class="inside-content">
+        <h2 class="row2-left-h2">Etiam cursus augue in tincidunt mollis.</h2>
+        <p>
+        Ut ultrices neque volutpat urna luctus semper. Nunc vehicula odio in mi elementum auctor. Nullam imperdiet est et sapien aliquet, non mattis leo pretium. Nullam id ultricies mauris. Mauris dapibus, ligula sit amet sagittis varius, mauris neque tempor justo, id accumsan est tortor sit amet justo. Suspendisse gravida leo lacus, quis dignissim risus dapibus vel. 
+        </p>
+        <a href="/fullArticle">Continue Reading</a>
+    </div>
+    
+</div>
+
+<div class="row2-right box">
+    <div class="inside-content">
+        <h2 class="row2-right-h2">Etiam eros lorem, malesuada eget elementum ut, tristique ut lacus.</h2>
+    <p>
+        Proin porta ante vel justo gravida, sit amet sodales nibh efficitur. Quisque gravida enim vel lorem lacinia suscipit. Praesent sit amet nisi ac nibh mollis sodales sit amet nec risus. Aliquam dapibus orci nec gravida feugiat. 
+    </p>
+    <a href="/fullArticle">Continue Reading</a>
+    </div>
+</div>
+
+<div class="all-posts box">
+    <div class="all-posts-contents">
+        <h2 class="all-posts-h2">All posts:</h2>
+        <a href="/fullArticle">Etiam cursus augue in tincidunt mollis.</a><button type="button" class="delete-button">Delete</button>
+
+        <a href="/fullArticle">Ut ultrices neque volutpat urna</a><button type="button" class="delete-button">Delete</button>
+        <a href="/fullArticle">Nunc vehicula odio in mi</a><button type="button" class="delete-button">Delete</button>
+        <a href="/fullArticle">neque tempor justo, id accumsan est </a><button type="button" class="delete-button">Delete</button>
+        <!-- <%  if (locals.titlesLists) {%>
+            <% for (let title of titlesLists) { %>
+                <a href="/<%= title %>"><%= title %></a>
+            <%} %>
+        <%  }%> -->
+        <!-- <% if (locals.titlesLists && locals.titlesLists.length > 0) { %>
+            <% titlesLists.forEach(title => { %>
+                <a href="/post/<%= encodeURIComponent(title) %>"><%= title %></a>
+            <% }); %>
+        <% } %> -->
+    </div>
+    
+</div>
+
+<div class="writing box">
+    <div class="writing-inside">
+        <h2 class="writing-h2">Let's write some more! </h2>
+        <form action="/submit" method="post">
+            <label for="user-title">What's the title:</label><br>
+            <input type="text" id="user-title" name="user-title" required><br><br>
+            <textarea name="user-text" rows="10"></textarea><br><br>
+            <button type="submit">Submit</button>
+        </form>
+          
+    </div>
+    
+</div>
+
+
+
+
+
+
+<%- include("partials/footer.ejs") %>
