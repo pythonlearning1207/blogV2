@@ -1,8 +1,5 @@
 <%- include("partials/header.ejs") %>
 
-<!-- <%  if (locals.message) {%>
-    <script>alert("<%= message%>");</script>
-<% } %> -->
 <div class="headline box">
     <div class="inside-content">
         <h2 class="headline-h2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
@@ -38,21 +35,15 @@
 <div class="all-posts box">
     <div class="all-posts-contents">
         <h2 class="all-posts-h2">All posts:</h2>
-        <a href="/fullArticle">Etiam cursus augue in tincidunt mollis.</a><button type="button" class="delete-button">Delete</button>
-
-        <a href="/fullArticle">Ut ultrices neque volutpat urna</a><button type="button" class="delete-button">Delete</button>
-        <a href="/fullArticle">Nunc vehicula odio in mi</a><button type="button" class="delete-button">Delete</button>
-        <a href="/fullArticle">neque tempor justo, id accumsan est </a><button type="button" class="delete-button">Delete</button>
-        <!-- <%  if (locals.titlesLists) {%>
-            <% for (let title of titlesLists) { %>
-                <a href="/<%= title %>"><%= title %></a>
-            <%} %>
-        <%  }%> -->
-        <!-- <% if (locals.titlesLists && locals.titlesLists.length > 0) { %>
-            <% titlesLists.forEach(title => { %>
-                <a href="/post/<%= encodeURIComponent(title) %>"><%= title %></a>
-            <% }); %>
-        <% } %> -->
+        
+         <% files.forEach(file => { %>
+            <a style="display: inline-block;" href= '/<%= file %>'><%= file %></a>
+            <form action="/delete/<%= file %>" method="post" style="display:inline;">
+                <button type="submit" class="delete-button">Delete</button>
+            </form>
+            <br>
+        <% }); %> 
+       
     </div>
     
 </div>
@@ -61,9 +52,9 @@
     <div class="writing-inside">
         <h2 class="writing-h2">Let's write some more! </h2>
         <form action="/submit" method="post">
-            <label for="user-title">What's the title:</label><br>
-            <input type="text" id="user-title" name="user-title" required><br><br>
-            <textarea name="user-text" rows="10"></textarea><br><br>
+            <label for="userTitle">What's the title:</label><br>
+            <input type="text" id="userTitle" name="userTitle" required><br><br>
+            <textarea name="userText" rows="10"></textarea><br><br>
             <button type="submit">Submit</button>
         </form>
           
