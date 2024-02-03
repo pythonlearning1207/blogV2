@@ -35,15 +35,10 @@
 <div class="all-posts box">
     <div class="all-posts-contents">
         <h2 class="all-posts-h2">All posts:</h2>
-        
-         <% files.forEach(file => { %>
-            <a style="display: inline-block;" href= '/<%= file %>'><%= file %></a>
-            <form action="/delete/<%= file %>" method="post" style="display:inline;">
-                <button type="submit" class="delete-button">Delete</button>
-            </form>
-            <br>
-        <% }); %> 
-       
+        <% files.forEach(function(file){ %>
+            <a href='/<%= file %>'><%= file %></a>
+            <!-- Last part, write a delete button -->
+        <% }) %>
     </div>
     
 </div>
@@ -51,13 +46,12 @@
 <div class="writing box">
     <div class="writing-inside">
         <h2 class="writing-h2">Let's write some more! </h2>
-        <form action="/submit" method="post">
-            <label for="userTitle">What's the title:</label><br>
-            <input type="text" id="userTitle" name="userTitle" required><br><br>
-            <textarea name="userText" rows="10"></textarea><br><br>
-            <button type="submit">Submit</button>
-        </form>
-          
+            <form action="/submit" method="POST">
+                <label for="title">title</label>
+                <input type="text" id="title" name="title" required>
+                <textarea id="message" name="message" rows="10" required></textarea>
+                <button type="submit">submit</button>
+            </form>
     </div>
     
 </div>
