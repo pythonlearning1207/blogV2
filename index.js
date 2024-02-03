@@ -131,7 +131,7 @@ app.get('/', (req, res)=> {
 //     });
 // });
 
-//render dynamically
+// render dynamically
 app.get('/:title', (req, res)=>{
     const title = req.params.title;
     const filePath = path.join(__dirname, '/views/pages',`${title}.ejs`);
@@ -162,7 +162,17 @@ app.post('/submit', (req, res) =>{
 })
 
 //Last part, write a delete handler
+app.post('/delete/:title', (req, res)=>{
+    const title = req.params.title;
+    const filePath = path.join(__dirname, '/views/pages/', `${title}.ejs`);
 
+    fs.unlink(filePath, (err)=>{
+        if (err) throw err;
+        console.log(`${title} deleted succesfully`);
+    })
+    res.redirect('/');
+
+})
 
 
 app.listen(port, (req, res)=> {

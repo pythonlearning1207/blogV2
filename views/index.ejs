@@ -36,8 +36,13 @@
     <div class="all-posts-contents">
         <h2 class="all-posts-h2">All posts:</h2>
         <% files.forEach(function(file){ %>
-            <a href='/<%= file %>'><%= file %></a>
+            <a style="display: inline-block;" href='/<%= file %>'><%= file %></a>
             <!-- Last part, write a delete button -->
+            <form style="display: inline;" action="/delete/<%= file %>" method="post">
+                <button type="delete">Delete</button>
+
+            </form>
+            </br>
         <% }) %>
     </div>
     
